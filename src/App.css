@@ -1,3 +1,5 @@
+/* nav for all devices */
+
 .nav {
     background: rgb(255, 125, 78);
     box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px -10px;
@@ -130,6 +132,9 @@
         box-shadow: none;
     }
 }
+
+
+/* Home components style */
 
 .name {
     font-size: 3rem;
