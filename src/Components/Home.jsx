@@ -10,7 +10,7 @@ const Home = () => {
     <div>
             {/* Hero section */}
             <div className='d-lg-flex d-md-flex justify-content-center align-items-center' style={{ minHeight: "100vh", background: "rgb(253, 255, 250)" }}>
-                <div className="container">
+                <div className="container m-2">
                     <div className="row">
                         <div className="col-lg-6 col-md-6 col-sm-12 d-flex flex-column justify-content-center">
                             <p className='fw-semibold fs-1 p mt-2' style={{ color: "rgb(75, 75, 72)" }}>Hi There!</p>
