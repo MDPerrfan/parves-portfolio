@@ -138,7 +138,7 @@
 
 .name {
     font-size: 3rem;
-    font-weight: 600;
+    font-weight: 800;
     color: rgb(255, 96, 39);
 }
 
@@ -154,8 +154,33 @@
 
 .coral {
     color: coral;
-    font-size: 25px;
-    font-weight: 600;
+    animation: blinker 1.5s;
+}
+
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+    filter: blur(5px);
+    transform: translateX(100%);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.des {
+    animation: fadeIn 4s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @media (max-width:900px) {
@@ -171,5 +196,59 @@
     }
     .nav ul {
         font-size: 15px !important;
+    }
+}
+
+
+/* About component */
+
+.tech {
+    margin: 5px;
+    font-size: 5rem;
+    color: #3b3b3b;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 2px;
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .4s ease 0s;
+    cursor: pointer;
+}
+
+.tech:hover {
+    background: coral;
+    color: white;
+    transform: translateY(-10px);
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+/* github calendar */
+
+
+/* Ensure the GitHub calendar container is responsive */
+
+#github-calendar-container {
+    max-width: 55rem;
+}
+
+@media (max-width: 850px) {
+    #github-calendar-container {
+        max-width: 40rem;
+        /* Expand to full width on smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    #github-calendar-container {
+        max-width: 22rem;
+        /* Expand to full width on smaller screens */
     }
 }

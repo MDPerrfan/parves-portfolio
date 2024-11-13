@@ -15,7 +15,7 @@ body {
 /* Track */
 
  ::-webkit-scrollbar-track {
-    background: #c04305;
+    background: #d64903;
 }
 
 
@@ -23,13 +23,5 @@ body {
 
  ::-webkit-scrollbar-thumb {
     background: rgb(36, 35, 34);
-    border-radius: 12px;
-}
-
-
-/* Handle on hover */
-
- ::-webkit-scrollbar-thumb:hover {
-    background: rgba(235, 155, 130, 0.911);
     border-radius: 12px;
 }
