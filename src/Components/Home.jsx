@@ -9,11 +9,11 @@ const Home = () => {
     <>
     <div>
             {/* Hero section */}
-            <div className='d-flex justify-content-center align-items-center' style={{ minHeight: "100vh", background: "rgb(253, 255, 250)" }}>
-                <div className="container mt-5">
+            <div className='d-lg-flex d-md-flex justify-content-center align-items-center' style={{ minHeight: "100vh", background: "rgb(253, 255, 250)" }}>
+                <div className="container">
                     <div className="row">
-                        <div className="col-lg-6 col-md-6 col-sm-12 d-flex flex-column justify-content-center mt-5 mt-lg-0 mt-md-0">
-                            <p className='fw-semibold fs-1 p' style={{ color: "rgb(75, 75, 72)" }}>Hi There!</p>
+                        <div className="col-lg-6 col-md-6 col-sm-12 d-flex flex-column justify-content-center">
+                            <p className='fw-semibold fs-1 p mt-2' style={{ color: "rgb(75, 75, 72)" }}>Hi There!</p>
                             <p className='fw-semibold fs-1 p' style={{ color: "rgb(73, 73, 72)" }}>I'm <span className='name'>Mohammed Parves</span></p>
                             <div className='fw-bold fs-2 p' style={{ color: "rgb(75, 75, 72)" }}>
                                 <Typewriter
@@ -26,7 +26,7 @@ const Home = () => {
                             </div>
                             <a href="" className='btn py-2 px-1 w-50 mt-3'>Send Mail</a>
                         </div>
-                        <div className="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
+                        <div className="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center align-items-center mt-5 mt-lg-0 mt-md-0">
                             <img id="main-profile" className='img-fluid w-75 mt-5 mt-lg-0 mt-md-0' src={assets.mainprofile2} alt="" />
                         </div>
                     </div>
