@@ -21,7 +21,7 @@ const Navbar = () => {
           <Link
             id="nav-item"
             to="/"
-            className={`d-flex flex-lg-row gap-2 flex-sm-column align-items-center text-decoration-none ${currentPath === '/' ? 'text-black' : ''}`}
+            className={`d-flex flex-lg-row gap-2 flex-sm-column align-items-center text-decoration-none ${currentPath === '/' ? 'text-white' : ''}`}
           >
             <FontAwesomeIcon icon={faHome} />
             <span>Home</span>
@@ -37,7 +37,7 @@ const Navbar = () => {
           <Link
             id="nav-item"
             to="/projects"
-            className={`d-flex flex-lg-row gap-2 flex-sm-column align-items-center text-decoration-none ${currentPath === '/projects' ? 'text-black' : ''}`}
+            className={`d-flex flex-lg-row gap-2 flex-sm-column align-items-center text-decoration-none ${currentPath === '/projects' ? 'text-white' : ''}`}
           >
             <FontAwesomeIcon icon={faBriefcase} />
             <span>Projects</span>

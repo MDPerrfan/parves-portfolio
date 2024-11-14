@@ -84,7 +84,7 @@ const About = () => {
           {/*github calender*/}
           <div className="my-5 d-flex justify-content-center flex-column align-items-center">
             <p className="fs-2 fw-bold text-center text-secondary">Days I <span className="fw-bolder fs-3 coral des" >Code</span></p>
-            <div id="github-calendar-container ">
+            <div id="github-calendar-container">
               <GitHubCalendar username="MDPerrfan" />
             </div>
           </div>

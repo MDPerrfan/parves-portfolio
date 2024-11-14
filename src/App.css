@@ -154,7 +154,7 @@
 
 .coral {
     color: coral;
-    animation: blinker 1.5s;
+    animation: fadeIn 1.5s;
 }
 
 .hidden {
@@ -236,7 +236,7 @@
 /* Ensure the GitHub calendar container is responsive */
 
 #github-calendar-container {
-    max-width: 55rem;
+    flex-shrink: 1;
 }
 
 @media (max-width: 850px) {
