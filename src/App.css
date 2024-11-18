@@ -252,3 +252,27 @@
         /* Expand to full width on smaller screens */
     }
 }
+
+
+/* contact component */
+
+input {
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid rgb(252, 110, 58);
+    outline: #ff4000;
+    color: #3e3e3e;
+}
+
+select {
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid coral;
+    color: #3e3e3e;
+}
+
+textarea {
+    min-height: 120px;
+    border-radius: 3px;
+    border: 1px solid coral;
+}

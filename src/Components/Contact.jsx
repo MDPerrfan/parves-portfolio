@@ -36,8 +36,9 @@ const Contact = () => {
                 <div className="mt-3">
                   <label htmlFor="topic">Choose a topic</label><br />
                   <select name="topic" id="topic" className="w-100">
-                    <option value="">Select one</option>
-                    <option value="two">Two</option>
+                    <option value="">Frontend</option>
+                    <option value="two">Backend</option>
+                    <option value="two">Full Stack</option>
                   </select>
                 </div>
 
@@ -52,7 +53,7 @@ const Contact = () => {
                 </div>
 
                 <div className="d-flex justify-content-center mt-4">
-                  <button type="submit" className="home_btn px-4 py-2 mb-5 border-0">Submit</button>
+                  <button type="submit" className=" px-4 py-2 mb-5 border-0">Submit</button>
                 </div>
               </form>
             </div>
@@ -62,6 +63,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      
     </>
   );
 };
