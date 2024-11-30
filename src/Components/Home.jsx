@@ -3,10 +3,16 @@ import { assets } from '../assets/assets'
 import Typewriter from 'typewriter-effect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 const Home = () => {
     useEffect(() => {
         // Define the IntersectionObserver
+   
+    }, []);
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -20,36 +26,69 @@ const Home = () => {
         // Select all elements with the 'hidden' class
         const hiddenElements = document.querySelectorAll('.hidden');
         hiddenElements.forEach((el) => observer.observe(el));
-
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 2000);
         // Cleanup observer on component unmount
         return () => {
             hiddenElements.forEach((el) => observer.unobserve(el));
-        };
+            clearTimeout(timer);
+        }; 
     }, []);
     return (
         <>
             <div>
                 {/* Hero section */}
-                <div className='d-lg-flex d-md-flex justify-content-center align-items-center' style={{ minHeight: "100vh", background: "rgb(253, 255, 250)" }}>
-                    <div className="container m-2">
-                        <div className="row">
-                            <div className="col-lg-6 col-md-6 col-sm-12 d-flex flex-column justify-content-center">
-                                <p className='fw-semibold fs-1 p mt-2 ' style={{ color: "rgb(75, 75, 72)" }}>Hi There!</p>
-                                <p className='fw-semibold fs-1 p des' style={{ color: "rgb(73, 73, 72)" }}>I'm <span className='name'>Mohammed Parves</span></p>
-                                <div className='fw-bold fs-2 p des' style={{ color: "rgb(75, 75, 72)" }}>
-                                    <Typewriter
-                                        options={{
-                                            strings: ['Web Developer', 'Techie', 'Teacher', 'Ecophile'],
-                                            autoStart: true,
-                                            loop: true,
-                                        }}
-                                    />
-                                </div>
-                                <a href="" className='btn py-2 px-1 w-50 mt-3'>Send Mail</a>
+                <div
+                    className='d-lg-flex d-md-flex justify-content-center align-items-center'
+                    style={{ minHeight: '100vh', background: 'rgb(253, 255, 250)' }}
+                >
+                    <div className='container m-2'>
+                        <div className='row'>
+                            {/* Left Column */}
+                            <div className='col-lg-6 col-md-6 col-sm-12 d-flex flex-column justify-content-center'>
+                                {loading ? (
+                                    <>
+                                        <Skeleton height={40} width={200} className="mb-2" />
+                                        <Skeleton height={40} width={300} className="mb-2" />
+                                        <Skeleton height={30} width={250} className="mb-4" />
+                                    </>
+                                ) : (
+                                    <>
+                                        <p className='fw-semibold fs-1 p mt-2' style={{ color: 'rgb(75, 75, 72)' }}>
+                                            Hi There!
+                                        </p>
+                                        <p className='fw-semibold fs-1 p des' style={{ color: 'rgb(73, 73, 72)' }}>
+                                            I'm <span className='name'>Mohammed Parves</span>
+                                        </p>
+                                        <div className='fw-bold fs-2 p des' style={{ color: 'rgb(75, 75, 72)' }}>
+                                            <Typewriter
+                                                options={{
+                                                    strings: ['Web Developer', 'Techie', 'Teacher', 'Ecophile'],
+                                                    autoStart: true,
+                                                    loop: true,
+                                                }}
+                                            />
+                                        </div>
+                                    </>
+                                )}
+                                <a href='mailto:mdperrfan@gamil.com' className='btn py-2 px-1 w-50 mt-3'>
+                                    {loading ? <Skeleton width={100} height={30} /> : 'Send Mail'}
+                                </a>
                             </div>
-                            <div className="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center align-items-center mt-5 mt-lg-0 mt-md-0">
-                                <img loading="lazy"
-                                    id="main-profile" className='img-fluid w-75 mt-5 mt-lg-0 mt-md-0 hidden' src={assets.mainprofile2} alt="" />
+
+                            {/* Right Column */}
+                            <div className='col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center align-items-center mt-5 mt-lg-0 mt-md-0'>
+                                {loading ? (
+                                    <Skeleton circle={true} height={200} width={200} />
+                                ) : (
+                                    <img
+                                        id='main-profile'
+                                        className='img-fluid w-75 mt-5 mt-lg-0 mt-md-0'
+                                        src={assets.mainprofile2}
+                                        alt='Profile'
+                                    />
+                                )}
                             </div>
                         </div>
                     </div>
@@ -76,7 +115,7 @@ const Home = () => {
                                 </ul>
                             </div>
                             <div className="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
-                                <img id="main-profile" loading="lazy"
+                                <img id="main-profile"
                                     className='img-fluid  w-75' src={assets.aboutimage2} alt="" />
                             </div>
                         </div>

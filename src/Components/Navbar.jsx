@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUser, faBriefcase, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUser, faEnvelope, faBolt,faCubesStacked } from '@fortawesome/free-solid-svg-icons';
 import '../App.css';
 
 const Navbar = () => {
@@ -39,13 +39,21 @@ const Navbar = () => {
             to="/projects"
             className={`d-flex flex-lg-row gap-2 flex-sm-column align-items-center text-decoration-none ${currentPath === '/projects' ? 'text-white' : ''}`}
           >
-            <FontAwesomeIcon icon={faBriefcase} />
+            <FontAwesomeIcon icon={faBolt} />
             <span>Projects</span>
           </Link>
           <Link
             id="nav-item"
+            to="/skills"
+            className={`d-flex flex-lg-row gap-2 flex-sm-column align-items-center text-decoration-none ${currentPath === '/skills' ? 'text-black' : ''}`}
+          >
+            <FontAwesomeIcon icon={faCubesStacked} />
+            <span>Skills</span>
+          </Link>
+          <Link
+            id="nav-item"
             to="/contact"
-            className={`d-flex flex-lg-row gap-2 flex-sm-column align-items-center text-decoration-none ${currentPath === '/contact' ? 'text-black' : ''}`}
+            className={`d-flex flex-lg-row gap-2 flex-sm-column align-items-center text-decoration-none ${currentPath === '/contact' ? 'text-white' : ''}`}
           >
             <FontAwesomeIcon icon={faEnvelope} />
             <span>Contact</span>
@@ -87,6 +95,14 @@ const Navbar = () => {
             onClick={toggleMenu}  // Close menu on click
           >
             <span>Projects</span>
+          </Link>
+          <Link
+            to="/skills"
+            id="nav-item"
+            className={`d-flex gap-2 flex-column align-items-center text-decoration-none ${currentPath === '/projects' ? 'text-black' : ''}`}
+            onClick={toggleMenu}  // Close menu on click
+          >
+            <span>Skills</span>
           </Link>
           <Link
             to="/contact"

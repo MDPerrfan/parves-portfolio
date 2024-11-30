@@ -4,11 +4,19 @@ import aboutimage from './about.png'
 import aboutimage2 from './about2.png'
 import pchat from './pchat.jpg'
 import contact from './contact2.png'
+import js from './skills/jS.jpg'
+import js2 from './skills/js2.jpg'
+import frontReact from './skills/frontReact.jpg'
+import ps1 from './skills/ps1.jpg'
 export const assets = {
     mainprofile,
     mainprofile2,
     aboutimage,
     aboutimage2,
     pchat,
-    contact
+    contact,
+    js,
+    js2,
+    frontReact,
+    ps1
 }

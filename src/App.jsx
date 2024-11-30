@@ -10,6 +10,7 @@ import Footer from './Components/Footer'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
+import Skills from './Components/Skills';
 const App = () => {
   return (
   <>
@@ -21,6 +22,7 @@ const App = () => {
           <Route path='/about' element={<About/>} />
           <Route path='/projects' element={<Projects />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/skills' element={<Skills />} />
         </Routes>
         <Footer/>
   </div>
