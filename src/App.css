@@ -276,3 +276,15 @@ textarea {
     border-radius: 3px;
     border: 1px solid coral;
 }
+
+
+/*Card*/
+
+.card {
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
