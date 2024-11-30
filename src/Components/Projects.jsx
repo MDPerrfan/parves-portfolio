@@ -48,7 +48,7 @@ const Projects = () => {
               ))
             : // Render Actual Project Data
               projectData.reverse().map((item, index) => (
-                <div key={index} className="col-lg-3 col-md-6 col-sm-12 my-1">
+                <div key={index} className="col-lg-4 col-md-6 col-sm-12 my-1 mb-5">
                   <div className="card">
                     <div className="card-body">
                       <img className='card-img-top' src={item.image} alt={item.title} />

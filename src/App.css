@@ -283,6 +283,8 @@ textarea {
 .card {
     transition: .3s ease;
     cursor: pointer;
+    border: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 10px;
 }
 
 .card:hover {
