@@ -28,10 +28,10 @@ const Projects = () => {
           {loading
             ? // Render Skeleton Loader
               Array.from({ length: 6 }).map((_, index) => (
-                <div key={index} className="col-lg-3 col-md-6 col-sm-12 my-1">
+                <div key={index} className="col-lg-4 col-md-6 col-sm-12 my-1">
                   <div className="card">
                     <div className="card-body">
-                      <Skeleton height={150} />
+                      <Skeleton height={160} />
                       <h5 className="card-title text-center fw-bold mt-3">
                         <Skeleton width={120} />
                       </h5>
