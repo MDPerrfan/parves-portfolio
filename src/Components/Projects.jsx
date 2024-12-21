@@ -13,7 +13,7 @@ const Projects = () => {
       if(projectData){
         setLoading(false); 
       }
-    }, 2000); 
+    }, 3000); 
     return () => clearTimeout(timeout);
   }, []);
 

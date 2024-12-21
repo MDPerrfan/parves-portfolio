@@ -32,7 +32,7 @@ const About = () => {
                   <GiAk47 /> Gaming
                 </li>
                 <li className="about-activity">
-                  <AiOutlineApi />Tech Exploration
+                  <AiOutlineApi /> Tech Exploration
                 </li>
                 <li className="about-activity">
                   <AiTwotoneRocket /> Traveling
@@ -48,37 +48,38 @@ const About = () => {
           <div>
             <p className='fs-2 fw-bold text-center text-secondary'>Developing <span className='fw-bolder fs-2 coral'>Skills in</span> </p>
             <div className="d-flex flex-wrap justify-content-center">
-              <div className="tech des">
+              <div className="tech des" data-tooltip="HTML5">
                 <DiHtml5 />
               </div>
-              <div className="tech des">
+              <div className="tech des" data-tooltip="CSS3">
                 <DiCss3Full />
               </div>
-              <div className="tech des">
+              <div className="tech des" data-tooltip="Bootstrap">
                 <DiBootstrap />
               </div>
-              <div className="tech des">
+              <div className="tech des" data-tooltip="Tailwind CSS">
                 <SiTailwindcss />
               </div>
-              <div className="tech des">
+              <div className="tech des" data-tooltip="Firebase">
                 <SiFirebase />
               </div>
-              <div className="tech des">
+              <div className="tech des" data-tooltip="C++">
                 <CgCPlusPlus />
               </div>
-              <div className="tech des">
+              <div className="tech des" data-tooltip="JavaScript">
                 <DiJavascript1 />
               </div>
-              <div className="tech des">
+              <div className="tech des" data-tooltip="Node.js">
                 <DiNodejs />
               </div>
-              <div className="tech des">
+              <div className="tech des" data-tooltip="React">
                 <DiReact />
               </div>
-              <div className="tech des">
+              <div className="tech des" data-tooltip="MongoDB">
                 <DiMongodb />
               </div>
             </div>
+
           </div>
 
           {/*github calender*/}

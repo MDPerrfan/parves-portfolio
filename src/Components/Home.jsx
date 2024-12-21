@@ -6,6 +6,7 @@ import { faFacebook, faInstagram, faTwitter, faLinkedin } from '@fortawesome/fre
 import { useEffect,useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 const Home = () => {
     useEffect(() => {
         // Define the IntersectionObserver
@@ -126,16 +127,16 @@ const Home = () => {
                         <div className="icons">
                             <ul className="list-unstyled d-flex gap-5 justify-content-center my-4">
                                 <li>
-                                    <FontAwesomeIcon icon={faFacebook} size="2x" />
+                                   <a href=""><FontAwesomeIcon icon={faFacebook} size="2x" style={{color:"black"}}/></a> 
                                 </li>
                                 <li>
-                                    <FontAwesomeIcon icon={faInstagram} size="2x" />
+                                    <a href="mailto:mdperrfan@gmail.com"><FontAwesomeIcon icon={faEnvelope} size="2x" style={{color:"maroon"}} /></a>
                                 </li>
                                 <li>
                                     <FontAwesomeIcon icon={faTwitter} size="2x" />
                                 </li>
                                 <li>
-                                    <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                                    <a style={{textDecoration:"none"}} href="https://linkedin.com/in/mohammed-parves-6635212aa/"><FontAwesomeIcon icon={faLinkedin} size="2x" style={{color:"cadetblue"}}/></a>
                                 </li>
                             </ul>
                         </div>

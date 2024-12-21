@@ -7,7 +7,7 @@ import Contact from './Components/Contact'
 import Projects from './Components/Projects'
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
 import Skills from './Components/Skills';

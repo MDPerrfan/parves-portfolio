@@ -10,8 +10,6 @@ const AppContextProvider = (props) => {
         try{
             const {data}=await axios.get(backendUrl+'/api/portfolio/get-portfolio-data')
             if(data){
-                console.log('Fetched projects:', data.projects); // Log fetched data
-
                 setProjectData(data.projects);
             }else{
                 toast.error("Failed to fetch projects");
