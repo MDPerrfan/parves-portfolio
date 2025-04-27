@@ -1,21 +1,10 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext} from 'react';
 import { AppContext } from '../context/AppContext';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 const Projects = () => {
-  const { projectData } = useContext(AppContext);
-  const [loading, setLoading] = useState(true);
-
-  
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      if(projectData){
-        setLoading(false); 
-      }
-    }, 3000); 
-    return () => clearTimeout(timeout);
-  }, []);
+  const { projectData,loading } = useContext(AppContext);
 
   return (
     <div className='d-md-flex justify-content-center align-items-center mt-md-5' style={{ minHeight: '100vh' }}>
