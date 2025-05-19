@@ -157,7 +157,7 @@ const Contact = () => {
           </div>
         </div>
         <div className="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
-          <img className="img-fluid w-75 des" src={assets.contact} alt="Contact" />
+          <img className="img-fluid w-75 des" src='https://res.cloudinary.com/ddbqfnyfc/image/upload/v1747671399/contact2_xdjv3t.png' alt="Contact" />
         </div>
       </div>
     </div>

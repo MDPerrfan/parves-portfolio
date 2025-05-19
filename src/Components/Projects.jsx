@@ -1,23 +1,80 @@
-import React, { useContext} from 'react';
+import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import { motion } from 'framer-motion';
 
 const Projects = () => {
-  const { projectData,loading } = useContext(AppContext);
+  const { projectData, loading } = useContext(AppContext);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const buttonVariants = {
+    hover: {
+      scale: 1.05,
+      boxShadow: "0px 5px 15px rgba(0,0,0,0.1)",
+      transition: {
+        duration: 0.3
+      }
+    },
+    tap: {
+      scale: 0.95
+    }
+  };
 
   return (
-    <div className='d-md-flex justify-content-center align-items-center mt-md-5' style={{ minHeight: '100vh' }}>
+    <motion.div 
+      className='d-md-flex justify-content-center align-items-center mt-md-5' 
+      style={{ minHeight: '100vh' }}
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
       <div className="container">
-        <p className='text-center fs-3 mt-md-5 '>
+        <motion.p 
+          className='text-center fs-3 mt-md-5'
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           My Recent <span className='fw-bolder fs-3 coral'>Works</span>
-        </p>
-        <p className='text-center'>Here are a few projects I've worked on recently.</p>
+        </motion.p>
+        <motion.p 
+          className='text-center'
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          Here are a few projects I've worked on recently.
+        </motion.p>
         <div className="row m-2">
           {loading
-            ? // Render Skeleton Loader
-              Array.from({ length: 6 }).map((_, index) => (
-                <div key={index} className="col-lg-4 col-md-6 col-sm-12 my-1">
+            ? Array.from({ length: 6 }).map((_, index) => (
+                <motion.div 
+                  key={index} 
+                  className="col-lg-4 col-md-6 col-sm-12 my-1"
+                  variants={cardVariants}
+                >
                   <div className="card">
                     <div className="card-body">
                       <Skeleton height={160} />
@@ -33,27 +90,77 @@ const Projects = () => {
                       <Skeleton width={80} height={30} />
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))
-            : // Render Actual Project Data
-              projectData.reverse().map((item, index) => (
-                <div key={index} className="col-lg-4 col-md-6 col-sm-12 my-1 mb-5">
-                  <div className="card">
-                    <div className="card-body">
-                      <img className='card-img-top' src={item.image} alt={item.title} />
-                      <h5 className="card-title text-center fw-bold">{item.title}</h5>
-                      <p className='text-secondary'>{item.description}</p>
-                    </div>
+            : projectData.reverse().map((item, index) => (
+                <motion.div 
+                  key={index} 
+                  className="col-lg-4 col-md-6 col-sm-12 my-1 mb-5"
+                  variants={cardVariants}
+                >
+                  <motion.div 
+                    className="card"
+                    whileHover={{ 
+                      y: -10,
+                      transition: { duration: 0.3 }
+                    }}
+                  >
+                    <motion.div 
+                      className="card-body"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <motion.img 
+                        className='card-img-top' 
+                        src={item.image} 
+                        alt={item.title}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                      <motion.h5 
+                        className="card-title text-center fw-bold"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                      >
+                        {item.title}
+                      </motion.h5>
+                      <motion.p 
+                        className='text-secondary'
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                      >
+                        {item.description}
+                      </motion.p>
+                    </motion.div>
                     <div className='d-flex justify-content-center gap-3 p-3'>
-                      <a className='px-4 py-2 rounded btn' href={item.githubLink}>GitHub</a>
-                      <a className='px-4 py-2 rounded btn' href={item.demoLink}>Demo</a>
+                      <motion.a 
+                        className='px-4 py-2 rounded btn' 
+                        href={item.githubLink}
+                        variants={buttonVariants}
+                        whileHover="hover"
+                        whileTap="tap"
+                      >
+                        GitHub
+                      </motion.a>
+                      <motion.a 
+                        className='px-4 py-2 rounded btn' 
+                        href={item.demoLink}
+                        variants={buttonVariants}
+                        whileHover="hover"
+                        whileTap="tap"
+                      >
+                        Demo
+                      </motion.a>
                     </div>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

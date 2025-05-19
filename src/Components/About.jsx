@@ -41,7 +41,7 @@ const About = () => {
               <p className='fs-5'>"The best thing about a boolean is even if you are wrong, you are only off by a bit." <span className='fs-6 text-secondary'>-Anonymous</span></p>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
-              <img src={assets.aboutimage} alt="" className='img-fluid w-75 ' />
+              <img src='https://res.cloudinary.com/ddbqfnyfc/image/upload/v1747669401/about_e5wvib.png' alt="" className='img-fluid w-75 ' />
             </div>
           </div>
           {/*skills card*/}
