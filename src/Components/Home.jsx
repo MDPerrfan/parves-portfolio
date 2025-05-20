@@ -205,7 +205,7 @@ const Home = () => {
                                     { icon: faFacebook, color: "black", href: "" },
                                     { icon: faEnvelope, color: "maroon", href: "mailto:mdperrfan@gmail.com" },
                                     { icon: faTwitter, color: "black", href: "" },
-                                    { icon: faLinkedin, color: "cadetblue", href: "https://linkedin.com/in/mohammed-parves-6635212aa/" }
+                                    { icon: faLinkedin, color: "cadetblue", href: "https://www.linkedin.com/in/devparves/" }
                                 ].map((social, index) => (
                                     <motion.li
                                         key={index}

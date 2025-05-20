@@ -35,7 +35,7 @@ const Footer = () => {
             </li>
             <li className="social-icons">
               <a
-                  href="https://www.linkedin.com/in/mohammed-parves-6635212aa"
+                  href="https://www.linkedin.com/in/devparves/"
                   style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"
