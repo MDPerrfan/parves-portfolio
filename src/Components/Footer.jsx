@@ -9,7 +9,7 @@ let year = date.getFullYear();
 const Footer = () => {
   return (
     <>
-    <div className="d-flex flex-lg-row flex-md-row flex-column  justify-content-between align-items-center" style={{background:"rgb(40, 40, 41)",minHeight:"70px"}}>
+    <div className="d-flex flex-lg-row flex-md-row flex-column  justify-content-between align-items-center" style={{backdropFilter:'blur(30px)',minHeight:"70px"}}>
     <p className="mx-2  text-white">Designed and Developed by <span style={{color:"coral"}}>Parves</span></p>
           <p className=" text-white">Copyright © {year}</p>
           <ul className="d-flex gap-4 me-5" style={{listStyle:"none"}}>

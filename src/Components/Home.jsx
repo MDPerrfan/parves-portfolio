@@ -140,7 +140,10 @@ const Home = () => {
                             variants={imageVariants}
                         >
                             {loading ? (
-                                <Skeleton circle={true} height={400} width={400} />
+                                <div className='img-fluid'>
+                                <Skeleton circle={true} height={300} width={300} />
+
+                                </div>
                             ) : (
                                 <motion.img
                                     id="main-profile"

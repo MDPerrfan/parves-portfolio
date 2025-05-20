@@ -5,7 +5,7 @@
     --primary-color: rgb(255, 125, 78);
     --text-color: white;
     --transition-speed: 0.3s;
-    --background-overlay: rgba(34, 36, 47, 0.7);
+    --background-overlay: rgba(35, 38, 52, 0.7);
 }
 
 
@@ -60,7 +60,7 @@ section {
     transition: transform var(--transition-speed) ease;
     border: none;
     height: 100%;
-    background: rgb(34, 41, 55);
+    background: rgb(25, 32, 48);
     backdrop-filter: blur(5px);
 }
 
@@ -213,12 +213,13 @@ footer {
     position: fixed;
     top: 80px;
     left: 0;
-    width: 60%;
+    width: 40%;
     height: 0;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.95);
+    background: transparent;
     transition: height 0.3s ease-in-out;
     z-index: 999;
+    backdrop-filter: blur(20px);
 }
 
 .menubar.active {
@@ -241,17 +242,14 @@ footer {
     align-items: center;
 }
 
-.menubar ul a {
-    display: block;
-    width: 100%;
+.menubar ul button {
     text-align: center;
     padding: 15px 0;
-    text-decoration: none;
-    color: #000;
     font-size: 1.2rem;
     font-weight: 400;
     border-bottom: 1px solid #eaeaea;
     transition: background-color 0.3s ease;
+    color: rgb(244, 217, 207);
 }
 
 .menubar ul a:hover {
@@ -269,7 +267,6 @@ footer {
     .nav {
         justify-content: start !important;
         position: relative;
-        background: rgb(244, 244, 255);
         box-shadow: none;
     }
 }

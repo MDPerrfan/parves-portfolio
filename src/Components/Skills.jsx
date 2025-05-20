@@ -206,7 +206,7 @@ const Skills = () => {
                                             }}
                                         />
                                         <motion.h5 
-                                            className="card-title text-center fw-bold mt-3"
+                                            className="card-title text-white text-center mt-3"
                                             initial={{ opacity: 0, y: 20 }}
                                             whileInView={{ opacity: 1, y: 0 }}
                                             viewport={{ once: true }}
@@ -224,7 +224,7 @@ const Skills = () => {
                                             {certificate.platform}
                                         </motion.p>
                                         <motion.a 
-                                            className='text-secondary text-decoration-none d-inline-block mt-auto' 
+                                            className='text-white-50 text-decoration-none d-inline-block mt-auto' 
                                             href={certificate.link} 
                                             style={{ fontSize: "small" }}
                                             variants={linkVariants}
