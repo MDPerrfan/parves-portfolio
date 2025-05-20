@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUser, faEnvelope, faBolt, faCubesStacked } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUser, faEnvelope, faBolt, faCubesStacked, faDownload } from '@fortawesome/free-solid-svg-icons';
 import '../App.css';
-
 const Navbar = () => {
   const [menuActive, setMenuActive] = useState(false);
 
@@ -40,6 +39,17 @@ const Navbar = () => {
     }
   };
 
+  const handleResumeDownload = () => {
+    // Replace with your actual resume file path
+    const resumeUrl = '../assets/resume.pdf';
+    const link = document.createElement('a');
+    link.href = resumeUrl;
+    link.download = 'Mohammed_Parves_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const navLinks = [
     { id: 'home', icon: faHome, text: 'Home' },
     { id: 'about', icon: faUser, text: 'About Me' },
@@ -63,6 +73,14 @@ const Navbar = () => {
               <span>{link.text}</span>
             </button>
           ))}
+          <button
+            id="nav-item"
+            onClick={handleResumeDownload}
+            className="d-flex flex-lg-row gap-2 flex-sm-column align-items-center text-decoration-none border-0 bg-transparent"
+          >
+            <FontAwesomeIcon icon={faDownload} />
+            <span>Resume</span>
+          </button>
         </ul>
 
         <div 
@@ -88,6 +106,12 @@ const Navbar = () => {
               <span>{link.text}</span>
             </button>
           ))}
+          <button
+            onClick={handleResumeDownload}
+            className="d-flex gap-2 flex-column align-items-center text-decoration-none border-0 bg-transparent w-100"
+          >
+            <span>Resume</span>
+          </button>
         </ul>
       </div>
     </>

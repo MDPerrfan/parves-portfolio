@@ -7,6 +7,7 @@ import Projects from './Components/Projects'
 import Skills from './Components/Skills'
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
+import ScrollToTop from './Components/ScrollToTop'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
@@ -36,6 +37,7 @@ const App = () => {
         </section>
       </main>
       <Footer/>
+      <ScrollToTop />
     </div>
   )
 }

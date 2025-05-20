@@ -1,6 +1,6 @@
 import Typewriter from 'typewriter-effect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
@@ -147,8 +147,8 @@ const Home = () => {
                             ) : (
                                 <motion.img
                                     id="main-profile"
-                                    className="img-fluid w-75 mt-5 mt-lg-0 mt-md-0 rounded-circle"
-                                    src="https://res.cloudinary.com/ddbqfnyfc/image/upload/v1747668948/aboutprofile_q2sjqf.jpg"
+                                    className="img-fluid w-100 mt-5 mt-lg-0 mt-md-0"
+                                    src="https://res.cloudinary.com/ddbqfnyfc/image/upload/v1747771857/business-man-illustration_cw8jhi.png"
                                     alt="Mohammed Parves Profile"
                                     whileHover={{ scale: 1.05 }}
                                     transition={{ duration: 0.3 }}
@@ -200,7 +200,7 @@ const Home = () => {
                             <motion.img
                                 id="main-profile"
                                 className="img-fluid w-50 rounded-circle"
-                                src="https://res.cloudinary.com/ddbqfnyfc/image/upload/v1747669049/Profile_main_yz2dau.jpg"
+                                src="https://res.cloudinary.com/ddbqfnyfc/image/upload/v1747771638/web-development-concept-with-programmer-ar_ofcby9.png"
                                 alt="Mohammed Parves Secondary Profile"
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ duration: 0.3 }}
