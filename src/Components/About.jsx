@@ -1,5 +1,4 @@
 import React from 'react'
-import { assets } from '../assets/assets'
 import GitHubCalendar from 'react-github-calendar';
 import { AiOutlineApi } from "react-icons/ai";
 import { GiAk47 } from "react-icons/gi";
@@ -18,8 +17,8 @@ import {
 const About = () => {
   return (
     <>
-      <div className='d-lg-flex d-md-flex justify-content-center align-items-center mt-md-5' style={{ minHeight: '100vh' }}>
-        <div className="container mt-md-5">
+      <div className='d-lg-flex d-md-flex justify-content-center align-items-center mt-md-5 h-screen' style={{ minHeight: '100vh' }}>
+        <div className="container">
           <div className="row mx-2">
             <div className="col-lg-6 col-md-6 col-sm-12 ">
               <p className='fs-1 p coral text-center fw-bold '>Be familiar with my<span className='name fw-bolder text-center'> PERSONA</span></p>
@@ -27,7 +26,7 @@ const About = () => {
                 I am currently a CS Student.
                 At <span className='coral'>Port City International University</span> </p>
               <p className='fs-4 '>Beyond coding, I find joy in various activities:!</p>
-              <ul className='list-unstyled fs-5 mx-3 fw-bold text-secondary'>
+              <ul className='list-unstyled fs-5 mx-3 '>
                 <li className="about-activity">
                   <GiAk47 /> Gaming
                 </li>
@@ -46,7 +45,7 @@ const About = () => {
           </div>
           {/*skills card*/}
           <div>
-            <p className='fs-2 fw-bold text-center text-secondary'>Developing <span className='fw-bolder fs-2 coral'>Skills in</span> </p>
+            <p className='fs-2 text-center '>Developing <span className='fw-bolder fs-2 coral'>Skills in</span> </p>
             <div className="d-flex flex-wrap justify-content-center">
               <div className="tech des" data-tooltip="HTML5">
                 <DiHtml5 />
@@ -84,7 +83,7 @@ const About = () => {
 
           {/*github calender*/}
           <div className="my-5 d-flex justify-content-center flex-column align-items-center">
-            <p className="fs-2 fw-bold text-center text-secondary">Days I <span className="fw-bolder fs-3 coral des" >Code</span></p>
+            <p className="fs-2 text-center ">Days I <span className="fw-bolder fs-3 coral des" >Code</span></p>
             <div id="github-calendar-container">
               <GitHubCalendar username="MDPerrfan" />
             </div>

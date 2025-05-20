@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify'; // Assuming you are using react-toastify
-import { assets } from '../assets/assets';
 import { AppContext } from '../context/AppContext';
 
 const Contact = () => {
@@ -136,18 +135,6 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                 ></textarea>
-              </div>
-
-              <div className="d-flex align-items-center mt-3">
-                <input
-                  type="checkbox"
-                  id="terms"
-                  name="termsAccepted"
-                  className="me-2 checkbox"
-                  checked={formData.termsAccepted}
-                  onChange={handleChange}
-                />
-                <label htmlFor="terms" className="mb-0">I accept the terms</label>
               </div>
 
               <div className="d-flex justify-content-center mt-4">

@@ -131,14 +131,16 @@ const Skills = () => {
             className='d-flex justify-content-center align-items-center mt-5' 
             style={{ minHeight: "100vh" }}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true }}
             variants={containerVariants}
         >
             <div className="container mt-lg-5 mt-md-5">
                 <motion.p 
                     className='fw-bolder fs-3 text-center'
                     initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                 >
                     My <span className='coral fs-3'>Achievements</span> and <span className='coral fs-3'>Certificates</span>
@@ -148,10 +150,10 @@ const Skills = () => {
                         ? Array.from({ length: totalImages }).map((_, index) => (
                             <motion.div 
                                 key={index} 
-                                className="col-lg-6 col-md-6 col-sm-12 my-1"
+                                className="col-lg-4 col-md-6 col-sm-12 my-1"
                                 variants={cardVariants}
                             >
-                                <div className="card">
+                                <div className="card h-100">
                                     <div className="card-body">
                                         <Skeleton height={160} />
                                         <h5 className="card-title text-center fw-bold mt-3">
@@ -170,20 +172,24 @@ const Skills = () => {
                         : certificates.map((certificate, index) => (
                             <motion.div 
                                 key={index} 
-                                className="col-md-6 col-sm-12 my-2"
+                                className="col-lg-4 col-md-6 col-sm-12 my-2"
                                 variants={cardVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
                             >
                                 <motion.div 
-                                    className="card"
+                                    className="card h-100"
                                     whileHover={{ 
                                         y: -10,
                                         transition: { duration: 0.3 }
                                     }}
                                 >
                                     <motion.div 
-                                        className="card-body"
+                                        className="card-body d-flex flex-column"
                                         initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
+                                        whileInView={{ opacity: 1 }}
+                                        viewport={{ once: true }}
                                         transition={{ duration: 0.5 }}
                                     >
                                         <motion.img 
@@ -192,25 +198,33 @@ const Skills = () => {
                                             alt={`${certificate.title} certificate`}
                                             whileHover={{ scale: 1.05 }}
                                             transition={{ duration: 0.3 }}
+                                            style={{ 
+                                                height: '200px', 
+                                                objectFit: 'contain',
+                                                padding: '10px',
+                                                backgroundColor: '#f8f9fa'
+                                            }}
                                         />
                                         <motion.h5 
-                                            className="card-title text-center fw-bold"
+                                            className="card-title text-center fw-bold mt-3"
                                             initial={{ opacity: 0, y: 20 }}
-                                            animate={{ opacity: 1, y: 0 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            viewport={{ once: true }}
                                             transition={{ duration: 0.5, delay: 0.2 }}
                                         >
                                             {certificate.title}
                                         </motion.h5>
                                         <motion.p 
-                                            className={`text-center ${certificate.color}`}
+                                            className={`text-center ${certificate.color} mt-2`}
                                             initial={{ opacity: 0 }}
-                                            animate={{ opacity: 1 }}
+                                            whileInView={{ opacity: 1 }}
+                                            viewport={{ once: true }}
                                             transition={{ duration: 0.5, delay: 0.3 }}
                                         >
                                             {certificate.platform}
                                         </motion.p>
                                         <motion.a 
-                                            className='text-secondary text-decoration-none d-inline-block' 
+                                            className='text-secondary text-decoration-none d-inline-block mt-auto' 
                                             href={certificate.link} 
                                             style={{ fontSize: "small" }}
                                             variants={linkVariants}

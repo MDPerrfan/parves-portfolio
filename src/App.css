@@ -1,20 +1,161 @@
-/* nav for all devices */
+/* Global Styles */
+
+:root {
+    --navbar-height: 80px;
+    --primary-color: rgb(255, 125, 78);
+    --text-color: white;
+    --transition-speed: 0.3s;
+    --background-overlay: rgba(34, 36, 47, 0.7);
+}
+
+
+/* Base Styles */
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    overflow-x: hidden;
+    color: var(--text-color);
+    background: transparent;
+}
+
+
+/* App Container */
+
+.app-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+
+/* Section Styling */
+
+section {
+    min-height: 100vh;
+    scroll-margin-top: var(--navbar-height);
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* Navbar Styles */
 
 .nav {
-    background: rgb(255, 125, 78);
     box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px -10px;
-    height: 80px;
+    height: var(--navbar-height);
     width: 100%;
     top: 0;
     z-index: 1000;
     position: fixed;
+    backdrop-filter: blur(10px);
 }
+
+
+/* Card Styles */
+
+.card {
+    transition: transform var(--transition-speed) ease;
+    border: none;
+    height: 100%;
+    background: rgb(34, 41, 55);
+    backdrop-filter: blur(5px);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+
+/* Button Styles */
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    transition: all var(--transition-speed) ease;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    backdrop-filter: blur(3px);
+}
+
+.btn:hover {
+    background-color: rgb(253, 101, 46);
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* Form Styles */
+
+input,
+select,
+textarea {
+    padding: 0.75rem;
+    border-radius: 4px;
+    border: 1px solid var(--primary-color);
+    width: 100%;
+    margin-bottom: 1rem;
+    transition: border-color var(--transition-speed) ease;
+    background: var(--background-overlay);
+    backdrop-filter: blur(3px);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: rgb(253, 101, 46);
+    box-shadow: 0 0 0 2px rgba(253, 101, 46, 0.1);
+}
+
+
+/* Main Content */
+
+main {
+    padding-top: var(--navbar-height);
+    background: transparent;
+}
+
+
+/* Footer Styles */
+
+footer {
+    background: var(--background-overlay);
+    backdrop-filter: blur(3px);
+    padding: 2rem 0;
+    margin-top: 0;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    .container {
+        padding: 0 1rem;
+    }
+    section {
+        margin: 0;
+        border-radius: 0;
+    }
+}
+
+
+/* nav for all devices */
 
 #nav-item {
     cursor: pointer;
     position: relative;
     transition: all 0.3s ease-out;
-    color: #414141;
+    color: #d9d9d9;
     text-decoration: none;
 }
 
@@ -25,7 +166,7 @@
     height: 2.5px;
     width: 0;
     border-radius: 14px;
-    background: #3e3e3e;
+    background: #f9570c;
     bottom: -5px;
     left: 0;
     z-index: -1;
@@ -142,16 +283,6 @@
     color: rgb(255, 96, 39);
 }
 
-.btn {
-    background-color: rgb(255, 113, 61);
-    color: white;
-}
-
-.btn:hover {
-    background-color: rgb(253, 101, 46);
-    color: rgb(255, 255, 255);
-}
-
 .coral {
     color: coral;
     animation: fadeIn 1.5s;
@@ -205,7 +336,7 @@
 .tech {
     margin: 5px;
     font-size: 5rem;
-    color: #3b3b3b;
+    color: coral;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius: 2px;
     width: 10rem;
@@ -215,6 +346,8 @@
     align-items: center;
     transition: all .4s ease 0s;
     cursor: pointer;
+    background: transparent;
+    backdrop-filter: blur(2px);
 }
 
 .tech:hover {
@@ -258,6 +391,7 @@
 
 #github-calendar-container {
     flex-shrink: 1;
+    background: transparent;
 }
 
 @media (max-width: 850px) {
@@ -305,9 +439,84 @@ textarea {
     transition: .3s ease;
     cursor: pointer;
     border: none;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 10px;
 }
 
 .card:hover {
     transform: scale(1.02);
+}
+
+
+/* SPA Transitions */
+
+.page-transition {
+    animation: fadeIn 0.5s ease-in;
+}
+
+.page-exit {
+    animation: fadeOut 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+
+/* Smooth Scrolling */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Ensure content is properly positioned below fixed navbar */
+
+main {
+    padding-top: 80px;
+    /* Same as navbar height */
+    min-height: calc(100vh - 80px);
+    /* Subtract navbar height from viewport height */
+}
+
+
+/* Active Navigation Item */
+
+#nav-item.active {
+    color: white;
+}
+
+#nav-item.active:after {
+    width: 100%;
+}
+
+
+/* Smooth Scrolling */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Ensure content is properly positioned below fixed navbar */
+
+main {
+    padding-top: 80px;
+    /* Same as navbar height */
 }

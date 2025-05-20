@@ -17,17 +17,23 @@ const Projects = () => {
     }
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
+  const getCardVariants = (index) => ({
+    hidden: { 
+      opacity: 0, 
+      x: index % 2 === 0 ? -100 : 100, // Alternate between left and right
+      y: 50
+    },
     visible: {
       opacity: 1,
+      x: 0,
       y: 0,
       transition: {
-        duration: 0.5,
-        ease: "easeOut"
+        duration: 0.6,
+        ease: "easeOut",
+        delay: index * 0.2
       }
     }
-  };
+  });
 
   const buttonVariants = {
     hover: {
@@ -44,25 +50,28 @@ const Projects = () => {
 
   return (
     <motion.div 
-      className='d-md-flex justify-content-center align-items-center mt-md-5' 
+      className='d-md-flex justify-content-center align-items-center' 
       style={{ minHeight: '100vh' }}
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
       <div className="container">
         <motion.p 
           className='text-center fs-3 mt-md-5'
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          My Recent <span className='fw-bolder fs-3 coral'>Works</span>
+          My Recent <span className=' fw-bolder fs-3 coral'>Works</span>
         </motion.p>
         <motion.p 
           className='text-center'
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           Here are a few projects I've worked on recently.
@@ -73,9 +82,9 @@ const Projects = () => {
                 <motion.div 
                   key={index} 
                   className="col-lg-4 col-md-6 col-sm-12 my-1"
-                  variants={cardVariants}
+                  variants={getCardVariants(index)}
                 >
-                  <div className="card">
+                  <div className="card h-100">
                     <div className="card-body">
                       <Skeleton height={160} />
                       <h5 className="card-title text-center fw-bold mt-3">
@@ -96,19 +105,23 @@ const Projects = () => {
                 <motion.div 
                   key={index} 
                   className="col-lg-4 col-md-6 col-sm-12 my-1 mb-5"
-                  variants={cardVariants}
+                  variants={getCardVariants(index)}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.2 }}
                 >
                   <motion.div 
-                    className="card"
+                    className="card h-100"
                     whileHover={{ 
                       y: -10,
                       transition: { duration: 0.3 }
                     }}
                   >
                     <motion.div 
-                      className="card-body"
+                      className="card-body d-flex flex-column"
                       initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
                       transition={{ duration: 0.5 }}
                     >
                       <motion.img 
@@ -117,25 +130,33 @@ const Projects = () => {
                         alt={item.title}
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.3 }}
+                        style={{ height: '200px', objectFit: 'cover' }}
                       />
                       <motion.h5 
-                        className="card-title text-center fw-bold"
+                        className="card-title text-white text-center  mt-3"
                         initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                       >
                         {item.title}
                       </motion.h5>
-                      <motion.p 
-                        className='text-secondary'
+                      <motion.div 
+                        className='text-white-50 flex-grow-1'
+                        style={{ 
+                          maxHeight: '120px', 
+                          overflowY: 'auto',
+                          scrollbar: 'hidden'
+                        }}
                         initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.3 }}
                       >
-                        {item.description}
-                      </motion.p>
+                        <p>{item.description}</p>
+                      </motion.div>
                     </motion.div>
-                    <div className='d-flex justify-content-center gap-3 p-3'>
+                    <div className='d-flex justify-content-center gap-3 p-3 mt-auto'>
                       <motion.a 
                         className='px-4 py-2 rounded btn' 
                         href={item.githubLink}
