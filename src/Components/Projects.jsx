@@ -18,8 +18,8 @@ const Projects = () => {
   };
 
   const getCardVariants = (index) => ({
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       x: index % 2 === 0 ? -100 : 100, // Alternate between left and right
       y: 50
     },
@@ -49,8 +49,8 @@ const Projects = () => {
   };
 
   return (
-    <motion.div 
-      className='d-md-flex justify-content-center align-items-center' 
+    <motion.div
+      className='d-md-flex justify-content-center align-items-center'
       style={{ minHeight: '100vh' }}
       initial="hidden"
       whileInView="visible"
@@ -58,7 +58,7 @@ const Projects = () => {
       variants={containerVariants}
     >
       <div className="container">
-        <motion.p 
+        <motion.p
           className='text-center fs-3 mt-md-5'
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ const Projects = () => {
         >
           My Recent <span className=' fw-bolder fs-3 coral'>Works</span>
         </motion.p>
-        <motion.p 
+        <motion.p
           className='text-center'
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -79,105 +79,107 @@ const Projects = () => {
         <div className="row m-2">
           {loading
             ? Array.from({ length: 6 }).map((_, index) => (
-                <motion.div 
-                  key={index} 
-                  className="col-lg-4 col-md-6 col-sm-12 my-1"
-                  variants={getCardVariants(index)}
-                >
-                  <div className="card h-100">
-                    <div className="card-body">
-                      <Skeleton height={160}  baseColor="#0e0e2e" highlightColor="#25257a"/>
-                      <h5 className="card-title text-center fw-bold mt-3">
-                        <Skeleton width={120} baseColor="#0e0e2e" highlightColor="#ffff"/>
-                      </h5>
-                      <p className="text-secondary mt-2">
-                        <Skeleton count={3} baseColor="#0e0e2e" highlightColor="#ffff"/>
-                      </p>
-                    </div>
-                    <div className="d-flex justify-content-center gap-3 p-3">
-                      <Skeleton count={2} width={80} height={30} baseColor="#0e0e2e" highlightColor="#fd652e"/>
-                    </div>
+              <motion.div
+                key={index}
+                className="col-lg-4 col-md-6 col-sm-12 my-1"
+                variants={getCardVariants(index)}
+              >
+                <div className="card h-100">
+                  <div className="card-body">
+                    <Skeleton height={160} baseColor="#0e0e2e" highlightColor="#25257a" />
+                    <h5 className="card-title text-center fw-bold mt-3">
+                      <Skeleton width={120} baseColor="#0e0e2e" highlightColor="#ffff" />
+                    </h5>
+                    <p className="text-secondary mt-2">
+                      <Skeleton count={3} baseColor="#0e0e2e" highlightColor="#ffff" />
+                    </p>
                   </div>
-                </motion.div>
-              ))
+                  <div className="d-flex justify-content-center gap-3 p-3">
+                    <Skeleton width={80} height={30} baseColor="#0e0e2e" highlightColor="#fd652e" />
+                    <Skeleton width={80} height={30} baseColor="#0e0e2e" highlightColor="#fd652e" />
+
+                  </div>
+                </div>
+              </motion.div>
+            ))
             : projectData.reverse().map((item, index) => (
-                <motion.div 
-                  key={index} 
-                  className="col-lg-4 col-md-6 col-sm-12 my-1 mb-5"
-                  variants={getCardVariants(index)}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.2 }}
+              <motion.div
+                key={index}
+                className="col-lg-4 col-md-6 col-sm-12 my-1 mb-5"
+                variants={getCardVariants(index)}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+              >
+                <motion.div
+                  className="card h-100"
+                  whileHover={{
+                    y: -10,
+                    transition: { duration: 0.3 }
+                  }}
                 >
-                  <motion.div 
-                    className="card h-100"
-                    whileHover={{ 
-                      y: -10,
-                      transition: { duration: 0.3 }
-                    }}
+                  <motion.div
+                    className="card-body d-flex flex-column"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
                   >
-                    <motion.div 
-                      className="card-body d-flex flex-column"
+                    <motion.img
+                      className='card-img-top'
+                      src={item.image}
+                      alt={item.title}
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.3 }}
+                      style={{ height: '200px', objectFit: 'cover' }}
+                    />
+                    <motion.h5
+                      className="card-title text-white text-center  mt-3"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                    >
+                      {item.title}
+                    </motion.h5>
+                    <motion.div
+                      className='text-white-50 flex-grow-1'
+                      style={{
+                        maxHeight: '120px',
+                        overflowY: 'auto',
+                        scrollbar: 'hidden'
+                      }}
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.5 }}
+                      transition={{ duration: 0.5, delay: 0.3 }}
                     >
-                      <motion.img 
-                        className='card-img-top' 
-                        src={item.image} 
-                        alt={item.title}
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.3 }}
-                        style={{ height: '200px', objectFit: 'cover' }}
-                      />
-                      <motion.h5 
-                        className="card-title text-white text-center  mt-3"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                      >
-                        {item.title}
-                      </motion.h5>
-                      <motion.div 
-                        className='text-white-50 flex-grow-1'
-                        style={{ 
-                          maxHeight: '120px', 
-                          overflowY: 'auto',
-                          scrollbar: 'hidden'
-                        }}
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.3 }}
-                      >
-                        <p>{item.description}</p>
-                      </motion.div>
+                      <p>{item.description}</p>
                     </motion.div>
-                    <div className='d-flex justify-content-center gap-3 p-3 mt-auto'>
-                      <motion.a 
-                        className='px-4 py-2 rounded btn' 
-                        href={item.githubLink}
-                        variants={buttonVariants}
-                        whileHover="hover"
-                        whileTap="tap"
-                      >
-                        GitHub
-                      </motion.a>
-                      <motion.a 
-                        className='px-4 py-2 rounded btn' 
-                        href={item.demoLink}
-                        variants={buttonVariants}
-                        whileHover="hover"
-                        whileTap="tap"
-                      >
-                        Demo
-                      </motion.a>
-                    </div>
                   </motion.div>
+                  <div className='d-flex justify-content-center gap-3 p-3 mt-auto'>
+                    <motion.a
+                      className='px-4 py-2 rounded btn'
+                      href={item.githubLink}
+                      variants={buttonVariants}
+                      whileHover="hover"
+                      whileTap="tap"
+                    >
+                      GitHub
+                    </motion.a>
+                    <motion.a
+                      className='px-4 py-2 rounded btn'
+                      href={item.demoLink}
+                      variants={buttonVariants}
+                      whileHover="hover"
+                      whileTap="tap"
+                    >
+                      Demo
+                    </motion.a>
+                  </div>
                 </motion.div>
-              ))}
+              </motion.div>
+            ))}
         </div>
       </div>
     </motion.div>
