@@ -552,21 +552,3 @@ main {
         display: none;
     }
 }
-
-
-/* Skeleton Loader Customization */
-
-.react-loading-skeleton {
-    background-color: #333366 !important;
-    background-image: none !important;
-    animation: none !important;
-    opacity: 1 !important;
-}
-
-.react-loading-skeleton::after {
-    display: none !important;
-}
-
-.react-loading-skeleton::before {
-    display: none !important;
-}

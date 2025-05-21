@@ -11,6 +11,7 @@ import ScrollToTop from './Components/ScrollToTop'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
+import 'react-loading-skeleton/dist/skeleton.css';
 import StarsBackground from './Components/StarsBackground';
 
 const App = () => {

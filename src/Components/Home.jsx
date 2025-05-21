@@ -92,9 +92,9 @@ const Home = () => {
                         >
                             {loading ? (
                                 <>
-                                    <Skeleton height={40} width={200} className="mb-2" />
-                                    <Skeleton height={40} width={300} className="mb-2" />
-                                    <Skeleton height={30} width={250} className="mb-4" />
+                                    <Skeleton height={40} width={200} className="mb-2" baseColor="#0e0e2e" highlightColor="#ffff"/>
+                                    <Skeleton height={40} width={300} className="mb-2" baseColor="#0e0e2e" highlightColor="#fd652e"/>
+                                    <Skeleton height={30} width={250} className="mb-4" baseColor="#0e0e2e" highlightColor="#ffff"/>
                                 </>
                             ) : (
                                 <>
@@ -141,7 +141,7 @@ const Home = () => {
                         >
                             {loading ? (
                                 <div className='img-fluid'>
-                                <Skeleton circle={true} height={300} width={300} />
+                                <Skeleton circle={true} height={300} width={300}  baseColor="#0e0e2e" highlightColor="#25257a"/>
 
                                 </div>
                             ) : (

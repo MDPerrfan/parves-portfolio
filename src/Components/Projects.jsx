@@ -86,17 +86,16 @@ const Projects = () => {
                 >
                   <div className="card h-100">
                     <div className="card-body">
-                      <Skeleton height={160} />
+                      <Skeleton height={160}  baseColor="#0e0e2e" highlightColor="#25257a"/>
                       <h5 className="card-title text-center fw-bold mt-3">
-                        <Skeleton width={120} />
+                        <Skeleton width={120} baseColor="#0e0e2e" highlightColor="#ffff"/>
                       </h5>
                       <p className="text-secondary mt-2">
-                        <Skeleton count={2} />
+                        <Skeleton count={3} baseColor="#0e0e2e" highlightColor="#ffff"/>
                       </p>
                     </div>
                     <div className="d-flex justify-content-center gap-3 p-3">
-                      <Skeleton width={80} height={30} />
-                      <Skeleton width={80} height={30} />
+                      <Skeleton count={2} width={80} height={30} baseColor="#0e0e2e" highlightColor="#fd652e"/>
                     </div>
                   </div>
                 </motion.div>
