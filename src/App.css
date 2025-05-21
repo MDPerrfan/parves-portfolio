@@ -400,7 +400,7 @@ footer {
 
 @media (max-width: 600px) {
     #github-calendar-container {
-        max-width: 22rem;
+        max-width: 28rem;
         /* Expand to full width on smaller screens */
     }
 }
