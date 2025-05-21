@@ -5,7 +5,7 @@ import { GiAk47 } from "react-icons/gi";
 import { AiTwotoneRocket } from "react-icons/ai";
 import { CgCPlusPlus } from "react-icons/cg";
 import { DiBootstrap } from "react-icons/di";
-import { SiTailwindcss, SiFirebase } from "react-icons/si";
+import { SiTailwindcss, SiFirebase, SiExpress, SiNextdotjs } from "react-icons/si";
 import {
   DiJavascript1,
   DiReact,
@@ -71,8 +71,14 @@ const About = () => {
               <div className="tech des" data-tooltip="Node.js">
                 <DiNodejs />
               </div>
+              <div className="tech des" data-tooltip="Express.js">
+                <SiExpress />
+              </div>
               <div className="tech des" data-tooltip="React">
                 <DiReact />
+              </div>
+              <div className="tech des" data-tooltip="Next.js">
+                <SiNextdotjs />
               </div>
               <div className="tech des" data-tooltip="MongoDB">
                 <DiMongodb />
