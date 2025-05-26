@@ -11,6 +11,13 @@ const Skills = () => {
     const totalImages = 8; // Total number of certificate images
 
     const certificates = [
+          {
+            image: 'https://res.cloudinary.com/ddbqfnyfc/image/upload/v1748276131/Screenshot_2_ns3p1i.jpg',
+            title: "Full Stack Web Development(MERN)",
+            platform: "OSTAD",
+            link: "https://ostad.app/share/certificate/c26946-mohammed-parves",
+            color: "text-warning"
+        },
         {
             image: 'https://res.cloudinary.com/ddbqfnyfc/image/upload/v1747669493/JS_ju5fk5.jpg',
             title: "JavaScript(Basic)",
