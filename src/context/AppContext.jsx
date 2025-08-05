@@ -4,7 +4,7 @@ import axios from 'axios'
 export const AppContext = createContext();
 
 const AppContextProvider = (props) => {
-    const backendUrl="https://devparvesserver.vercel.app/";
+    const backendUrl="https://devparves-server.onrender.com";
     const [projectData,setProjectData]=useState([]);
     const[loading,setLoading]=useState()
     const getProjectData=async()=>{
